@@ -431,19 +431,19 @@ version. You must use the following name convention: **release-X.Y.Z**, where
 X, Y and Z are: major, minor and patch [version numbers](#versioning).
 
 The ```experimental``` is a **temporary branch** which contains a new feature or
-ideia. You must use the following name convention: **experimental-brief-description**.
+ideia. You must use the following name convention: **experimental/brief-description**.
 
 The ```feature``` is a **temporary branch** which contains a new feature under
 development that latter will be merged against the development branch. You must
-use the following name convention: **feature-brief-description**.
+use the following name convention: **feature/brief-description**.
 
 The ```bugfix``` is a **temporary branch** which contains necessary fix to be
 applied **after** a specific release to be merged against the development branch.
-You must use the following name convention: **bugfix-brief-description**.
+You must use the following name convention: **bugfix/brief-description**.
 
 The ```hotfix``` is a **temporary branch** which contains a critical fix to be
 applied **immediately** and merged against the main and the development branches.
-You must use the following name convention: **hotfix-brief-description**.
+You must use the following name convention: **hotfix/brief-description**.
 
 Feel free to apply the labels from GitHub to the branches, they are very helpful.
 

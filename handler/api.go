@@ -18,7 +18,7 @@ var (
 	)
 )
 
-// GET /api/points
+// FindDistances GET /api/points
 func FindDistances(c *gin.Context) {
 	// Prometheus counter
 	metrics.IncCounter(reqApiPointsCounter)

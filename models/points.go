@@ -8,12 +8,13 @@ import (
 	"os"
 )
 
+// Coordinate struct for points
 type Coordinate struct {
 	X float64 `json:"x"`
 	Y float64 `json:"y"`
 }
 
-// getCoordinatesFromFile reads the values from the JSON file
+// GetCoordinatesFromFile reads the values from the JSON file
 func GetCoordinatesFromFile(filePath string) ([]Coordinate, error) {
 	var coordinates []Coordinate
 

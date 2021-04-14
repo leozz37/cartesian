@@ -15,7 +15,7 @@ var (
 	)
 )
 
-// GET /points
+// GetPoints GET /points
 func GetPoints(c *gin.Context) {
 	// Prometheus counter
 	metrics.IncCounter(reqPointsCounter)
