@@ -1,6 +1,6 @@
 package models
 
-import "github.com/leozz37/cartesian/db"
+import "github.com/leozz37/cartesian/services/db"
 
 func CreateCoordinate(coordinate Coordinate) error {
 	err := db.MySQL.Create(&coordinate).Error
