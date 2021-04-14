@@ -1,0 +1,18 @@
+# Binary
+cartesian
+
+# Tests files
+coverage.out
+*testing.db
+
+# Database Data
+data/.mysql-data
+
+# Terraform
+.terraform
+*.tfstate
+*.hcl
+*.tfstate.*backup
+
+# Authentication files
+resources/sa-private-key.json
