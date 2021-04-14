@@ -7,6 +7,7 @@
 [![Docker Compose](https://github.com/leozz37/cartesian/actions/workflows/docker_compose.yml/badge.svg)](https://github.com/leozz37/cartesian/actions/workflows/docker_compose.yml)
 [![Terraform](https://github.com/leozz37/cartesian/actions/workflows/terraform.yml/badge.svg)](https://github.com/leozz37/cartesian/actions/workflows/terraform.yml)
 [![Maintainability](https://api.codeclimate.com/v1/badges/799eec37d71c72d1c5e4/maintainability)](https://codeclimate.com/github/leozz37/cartesian/maintainability)
+[![codecov](https://codecov.io/gh/leozz37/cartesian/branch/master/graph/badge.svg?token=NriF4QUxDZ)](https://codecov.io/gh/leozz37/cartesian)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/a9fdbd2d9cde4aeab07a03e8f23bab12)](https://www.codacy.com/gh/leozz37/cartesian/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=leozz37/cartesian&amp;utm_campaign=Badge_Grade)
 [![Go Report Card](https://goreportcard.com/badge/github.com/leozz37/cartesian)](https://goreportcard.com/report/github.com/leozz37/cartesian)
 
