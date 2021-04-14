@@ -83,13 +83,11 @@ For the API, this is the direcoty rules:
 
 ## Quick-start
 
-This is an REST API, made with Golang and Gin. You can manually run it or use docker-compose (recommended).
+This is an REST API, made with [Golang](https://golang.org/) and [Gin](https://github.com/gin-gonic/gin). You can manually run it or use [docker-compose](https://docs.docker.com/compose/install/) (recommended) or [Kubernetes](https://kubernetes.io/docs/setup/) to get everthing up.
 
-To install the API dependencies run:
-
-```shell
-$ go mod download
-```
+The majoraty of the sensible data is hardcoded on environment variables. Is not a good practice
+but for the sake of simplicity, we'll be declaring them on the `.env.example` file. Change it if
+needed for your environment.
 
 ## Building
 
