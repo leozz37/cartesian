@@ -39,6 +39,28 @@ services:
     cap_add:
       - SYS_NICE
 
+  prometheus:
+    image: prom/prometheus:v2.25.2
+    container_name: "prometheus"
+    ports:
+      - 9090:9090
+    volumes:
+      - ./resources/prometheus.yml:/etc/prometheus/prometheus.yml
+    networks:
+      - cartesian_public
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+
+  grafana:
+    image: grafana/grafana:6.7.6
+    container_name: "grafana"
+    ports:
+      - 3000:3000
+    networks:
+      - cartesian_public
+    volumes:
+      - ./resources/grafana:/etc/grafana/provisioning
+
 networks:
   cartesian_public:
       name: cartesian_public
