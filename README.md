@@ -27,6 +27,7 @@ This is an API for Civi test.
 - [Endpoints](#endpoints)
   - [/points](#points)
   - [/api/points](#api-points)
+- [Continuous Integration](#continuous-integration)
 
 ### Architecture
 
@@ -364,3 +365,19 @@ $ curl -X GET "http://localhost:8080/api/points?x=-94&y=89&distance=318"
 
 {"message":[{"x":63,"y":-72}]}
 ```
+
+## Continuous Integration
+
+We use GitHub Actions for our CI tool. Right now we have four workflows, and you can check they state [here](https://github.com/leozz37/cartesian/actions):
+
+[![Build](https://github.com/leozz37/cartesian/actions/workflows/build.yml/badge.svg)](https://github.com/leozz37/cartesian/actions/workflows/build.yml) - Golang Binary build
+
+[![Unit Tests](https://github.com/leozz37/cartesian/actions/workflows/unit_tests.yml/badge.svg)](https://github.com/leozz37/cartesian/actions/workflows/unit_tests.yml) - Unit Tests status
+
+[![Functional Tests](https://github.com/leozz37/cartesian/actions/workflows/functional_tests.yml/badge.svg)](https://github.com/leozz37/cartesian/actions/workflows/functional_tests.yml) - Functional Tests status
+
+[![Docker](https://github.com/leozz37/cartesian/actions/workflows/docker.yml/badge.svg)](https://github.com/leozz37/cartesian/actions/workflows/docker.yml) - Docker image build
+
+[![Docker Compose](https://github.com/leozz37/cartesian/actions/workflows/docker_compose.yml/badge.svg)](https://github.com/leozz37/cartesian/actions/workflows/docker_compose.yml) - Docker Compose build
+
+[![Terraform](https://github.com/leozz37/cartesian/actions/workflows/terraform.yml/badge.svg)](https://github.com/leozz37/cartesian/actions/workflows/terraform.yml) - Terraform plan
