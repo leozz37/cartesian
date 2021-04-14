@@ -13,6 +13,8 @@
 
 This is an API for Civi test.
 
+> note: I couldn't finish the Terraform implementation, Grafana dashboard file and hit the code coverage I wish due to time.
+
 ## Contents
 
 - [Architecture](#architecture)
