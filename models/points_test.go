@@ -3,7 +3,7 @@ package models
 import (
 	"testing"
 
-	"github.com/leozz37/cartesian/db"
+	"github.com/leozz37/cartesian/services/db"
 )
 
 func setupMySQL() {

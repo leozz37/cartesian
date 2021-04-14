@@ -6,9 +6,9 @@ import (
 
 	"github.com/joho/godotenv"
 	"github.com/leozz37/cartesian/controllers"
-	"github.com/leozz37/cartesian/db"
 	"github.com/leozz37/cartesian/models"
 	"github.com/leozz37/cartesian/routes"
+	"github.com/leozz37/cartesian/services/db"
 )
 
 func main() {
