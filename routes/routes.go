@@ -11,6 +11,7 @@ import (
 func InitRoutes() {
 	r := gin.Default()
 
+	// Setting log format
 	r.Use(gin.LoggerWithFormatter(func(param gin.LogFormatterParams) string {
 		return fmt.Sprintf("%s - [%s] \"%s %s %s %d %s \"%s\" %s\"\n",
 			param.ClientIP,
