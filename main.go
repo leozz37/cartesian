@@ -9,6 +9,7 @@ import (
 	"github.com/leozz37/cartesian/models"
 	"github.com/leozz37/cartesian/routes"
 	"github.com/leozz37/cartesian/services/db"
+	"github.com/leozz37/cartesian/services/metrics"
 )
 
 func main() {
@@ -26,6 +27,9 @@ func main() {
 
 	// Get data from JSON file and save to DB
 	controllers.Rebase()
+
+	// Init Prometheus
+	go metrics.InitPrometheus()
 
 	// Setting up routes
 	routes.InitRoutes()

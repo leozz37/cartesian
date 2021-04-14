@@ -14,5 +14,5 @@ scrape_configs:
   - job_name: 'cartesian'
     scrape_interval: 5s
     static_configs:
-      - targets: ['backend:2112']
+      - targets: ['cartesian:2112']
   

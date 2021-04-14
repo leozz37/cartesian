@@ -3,7 +3,7 @@ version: "3.6"
 services:
   cartesian:
     environment:
-      PORT: ${PORT}
+      PORT: 8080
       DATABASE_TYPE: mysql
       DATABASE_DSN: root:root@tcp(mysql:3306)/cartesian
       DATA_PATH: data/points.json
@@ -12,7 +12,8 @@ services:
     build:
       context: .
     ports:
-      - ${PORT}:${PORT}
+      - 8080:8080
+      - 2112:2112
     networks:
       - cartesian_public
     depends_on:
