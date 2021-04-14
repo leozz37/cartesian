@@ -1,0 +1,34 @@
+
+name: Functional Tests
+
+on:
+  push: {}
+  pull_request: {}
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        strategy:
+          matrix:
+            python-version: [3.8]
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v2
+
+            - name: Run System
+              run: docker-compose up -d
+
+            - name: Run Functional Tests
+              run: |
+                sudo pip install robotframework docker robotframework-requests robotframework-jsonlibrary
+                robot -d output tests/
+
+            - name: Teardown
+              run: docker-compose down
+
+            - name: Export System Tests Artifact
+              uses: actions/upload-artifact@v2
+              with:
+                name: system-tests-report
+                path: ./output
