@@ -16,4 +16,11 @@ jobs:
         run: go mod download
 
       - name: Test
-        run: go test -v -covermode=count ./....
+        run: go test ./....
+
+      - name: Upload code coverage
+        uses: paambaati/codeclimate-action@v2.2.4
+        env:
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+        with:
+          coverageCommand: go test -v -covermode=count ./....
