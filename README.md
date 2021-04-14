@@ -23,6 +23,7 @@ This is an API for Civi test.
   - [Kubernetes](#kubernetes)
 - [Testing](#testing)
   - [Unit Tests](#unit-tests)
+  - [Functional Tests](#functional-tests)
 
 ### Architecture
 
@@ -223,3 +224,19 @@ To run the tests with coverage, do the following:
 ```shell
 $ go test -v -covermode=count ./...
 ````
+
+### Functional Tests
+
+To run the functional tests, you need [Robot Framework](https://robotframework.org/) and its dependencies. To install everythin, run the following:
+
+```shell
+$ pip install robotframework robotframework-requests robotframework-jsonlibrary
+```
+
+Make sure the system is running, as we suggested with `docker-compose`. And run the following:
+
+```shell
+$ docker-compose up -d
+
+$ robot -d output/ tests/
+```
