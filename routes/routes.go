@@ -9,6 +9,7 @@ import (
 	"github.com/leozz37/cartesian/handler"
 )
 
+// InitRoutes starts all Gin routes
 func InitRoutes() {
 	log.Println("Starting routes")
 	r := gin.Default()
