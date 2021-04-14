@@ -6,6 +6,8 @@
 [![Docker](https://github.com/leozz37/cartesian/actions/workflows/docker.yml/badge.svg)](https://github.com/leozz37/cartesian/actions/workflows/docker.yml)
 [![Docker Compose](https://github.com/leozz37/cartesian/actions/workflows/docker_compose.yml/badge.svg)](https://github.com/leozz37/cartesian/actions/workflows/docker_compose.yml)
 [![Terraform](https://github.com/leozz37/cartesian/actions/workflows/terraform.yml/badge.svg)](https://github.com/leozz37/cartesian/actions/workflows/terraform.yml)
+[![Maintainability](https://api.codeclimate.com/v1/badges/799eec37d71c72d1c5e4/maintainability)](https://codeclimate.com/github/leozz37/cartesian/maintainability)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/a9fdbd2d9cde4aeab07a03e8f23bab12)](https://www.codacy.com/gh/leozz37/cartesian/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=leozz37/cartesian&amp;utm_campaign=Badge_Grade)
 
 This is an API for Civi test.
 
@@ -27,6 +29,7 @@ This is an API for Civi test.
 - [Endpoints](#endpoints)
   - [/points](#points)
   - [/api/points](#api-points)
+- [Terraform](#terraform)
 - [Continuous Integration](#continuous-integration)
 - [Contribuilting](#contribuilting)
 
@@ -366,6 +369,14 @@ $ curl -X GET "http://localhost:8080/api/points?x=-94&y=89&distance=318"
 
 {"message":[{"x":63,"y":-72}]}
 ```
+
+## Terraform
+
+> WIP
+
+Didn't had the time to finish Terraform implementation. But the main idea is to deployt it to GKE. Right now
+it's only enabling the App Engine service (the initial idea was to only deploy the API to the cloud). Services
+like MySQL, Prometheus and Grafana, should be substituted by a cloud hosted service (such as Cloud SQL).
 
 ## Continuous Integration
 
