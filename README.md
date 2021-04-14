@@ -14,6 +14,7 @@ This is an API for Civi test.
 - [Architecture](#architecture)
   - [Directory Structure](#directory-structure)
 - [Quick-start](#quick-start)
+- [Dependencies](#dependencies)
 - [Building](#building)
   - [Binary](#binary)
   - [Makefile](#makefile)
@@ -88,6 +89,23 @@ This is an REST API, made with [Golang](https://golang.org/) and [Gin](https://g
 The majoraty of the sensible data is hardcoded on environment variables. Is not a good practice
 but for the sake of simplicity, we'll be declaring them on the `.env.example` file. Change it if
 needed for your environment.
+
+## Dependencies
+
+In this project we need the following dependencies:
+
+- MySQL
+- Prometheus
+- Grafana
+- Robot Framework
+
+You can install them on your system or run them on containers (besides robot framework). If you're running them manually, set them up on the `.env.example` file to point to the right address or set the environment variables.
+
+To install the API dependencies run:
+
+```shell
+$ go mod download
+```
 
 ## Building
 
