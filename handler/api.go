@@ -8,9 +8,21 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/leozz37/cartesian/models"
+	"github.com/leozz37/cartesian/services/metrics"
 )
 
+var (
+	reqApiPointsCounter = *metrics.CreateCounter(
+		"api_http_api_points_request_total",
+		"Total http request on /api/points",
+	)
+)
+
+// GET /api/points
 func FindDistances(c *gin.Context) {
+	// Prometheus counter
+	metrics.IncCounter(reqApiPointsCounter)
+
 	distance := c.Query("distance")
 	x := c.Query("x")
 	y := c.Query("y")
@@ -27,8 +39,8 @@ func FindDistances(c *gin.Context) {
 	yFloat, _ := strconv.ParseFloat(y, 64)
 
 	// Getting machinting distances
-	coordiante := models.Coordinate{X: xFloat, Y: yFloat}
-	matches, err := getWithinDistances(coordiante, distanceFloat)
+	coordinate := models.Coordinate{X: xFloat, Y: yFloat}
+	matches, err := getWithinDistances(coordinate, distanceFloat)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"message": err})
 	}

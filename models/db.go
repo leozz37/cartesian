@@ -1,6 +1,6 @@
 package models
 
-import "github.com/leozz37/cartesian/db"
+import "github.com/leozz37/cartesian/services/db"
 
 func CreateCoordinate(coordinate Coordinate) error {
 	err := db.MySQL.Create(&coordinate).Error
@@ -19,11 +19,11 @@ func DeleteCoordinates() error {
 }
 
 func FindCoordinates() ([]Coordinate, error) {
-	var coordiantes []Coordinate
+	var coordinates []Coordinate
 
-	err := db.MySQL.Find(&coordiantes).Error
+	err := db.MySQL.Find(&coordinates).Error
 	if err != nil {
 		return nil, err
 	}
-	return coordiantes, nil
+	return coordinates, nil
 }

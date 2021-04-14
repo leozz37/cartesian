@@ -2,6 +2,7 @@ package routes
 
 import (
 	"fmt"
+	"log"
 	"time"
 
 	"github.com/gin-gonic/gin"
@@ -9,8 +10,10 @@ import (
 )
 
 func InitRoutes() {
+	log.Println("Starting routes")
 	r := gin.Default()
 
+	// Setting log format
 	r.Use(gin.LoggerWithFormatter(func(param gin.LogFormatterParams) string {
 		return fmt.Sprintf("%s - [%s] \"%s %s %s %d %s \"%s\" %s\"\n",
 			param.ClientIP,

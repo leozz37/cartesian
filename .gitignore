@@ -4,6 +4,7 @@ cartesian
 # Tests files
 coverage.out
 *testing.db
+*output
 
 # Database Data
 data/.mysql-data

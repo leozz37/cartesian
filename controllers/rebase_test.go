@@ -4,8 +4,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/leozz37/cartesian/db"
 	"github.com/leozz37/cartesian/models"
+	"github.com/leozz37/cartesian/services/db"
 )
 
 func setupMySQL() {
@@ -24,12 +24,12 @@ func TestRebaseSuccess(t *testing.T) {
 		t.Error(err)
 	}
 
-	expectedCoordiante := models.Coordinate{X: 63, Y: -72}
+	expectedCoordinate := models.Coordinate{X: 63, Y: -72}
 
-	if result[0].X != expectedCoordiante.X {
-		t.Error("X coordiante is differente")
-	} else if result[0].Y != expectedCoordiante.Y {
-		t.Error("Y coordiante is differente")
+	if result[0].X != expectedCoordinate.X {
+		t.Error("X coordinate is different")
+	} else if result[0].Y != expectedCoordinate.Y {
+		t.Error("Y coordinate is different")
 	}
 }
 
