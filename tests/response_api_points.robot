@@ -17,5 +17,5 @@ Check Status Code /api/points
     &{params}=          Create Dictionary       x=-94    y=89   distance=318
     ${response}=        GET On Session          requestAuth     /api/points     params=${params}
     ${msg_response}=    Get Value From Json     ${response.json()}      $.message.x
-    ${coordiante}=      Evaluate                "".join(${msg_response})
-    Should Contain      -94     ${coordiante}
+    ${coordinate}=      Evaluate                "".join(${msg_response})
+    Should Contain      -94     ${coordinate}

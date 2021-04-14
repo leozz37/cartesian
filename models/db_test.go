@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-func TestCreateCoordiante(t *testing.T) {
+func TestCreateCoordinate(t *testing.T) {
 	setupMySQL()
 
 	coordinate := Coordinate{X: 63, Y: -72}
@@ -16,9 +16,9 @@ func TestCreateCoordiante(t *testing.T) {
 	}
 
 	if result[0].X != coordinate.X {
-		t.Error("X coordiante is differente")
+		t.Error("X coordinate is different")
 	} else if result[0].Y != coordinate.Y {
-		t.Error("Y coordiante is differente")
+		t.Error("Y coordinate is different")
 	}
 }
 

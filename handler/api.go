@@ -39,8 +39,8 @@ func FindDistances(c *gin.Context) {
 	yFloat, _ := strconv.ParseFloat(y, 64)
 
 	// Getting machinting distances
-	coordiante := models.Coordinate{X: xFloat, Y: yFloat}
-	matches, err := getWithinDistances(coordiante, distanceFloat)
+	coordinate := models.Coordinate{X: xFloat, Y: yFloat}
+	matches, err := getWithinDistances(coordinate, distanceFloat)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"message": err})
 	}
