@@ -8,7 +8,7 @@ import (
 	_ "github.com/jinzhu/gorm/dialects/sqlite" // for SQLite instances
 )
 
-// Global MySQL database instance
+// MySQL global database instance
 var MySQL *gorm.DB
 
 // ConnectMySQL init connection to MySQL database

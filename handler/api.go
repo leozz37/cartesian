@@ -12,7 +12,7 @@ import (
 )
 
 var (
-	reqApiPointsCounter = *metrics.CreateCounter(
+	reqAPIPointsCounter = *metrics.CreateCounter(
 		"api_http_api_points_request_total",
 		"Total http request on /api/points",
 	)
@@ -21,7 +21,7 @@ var (
 // FindDistances GET /api/points
 func FindDistances(c *gin.Context) {
 	// Prometheus counter
-	metrics.IncCounter(reqApiPointsCounter)
+	metrics.IncCounter(reqAPIPointsCounter)
 
 	distance := c.Query("distance")
 	x := c.Query("x")
@@ -78,13 +78,16 @@ func validateQueryValue(value string) error {
 }
 
 func validateQuery(x, y, distance string) error {
-	if err := validateQueryValue(distance); err != nil {
+	err := validateQueryValue(distance)
+	if err != nil {
 		return err
 	}
-	if err := validateQueryValue(x); err != nil {
+	err = validateQueryValue(x)
+	if err != nil {
 		return err
 	}
-	if err := validateQueryValue(y); err != nil {
+	err = validateQueryValue(y)
+	if err != nil {
 		return err
 	}
 	return nil
