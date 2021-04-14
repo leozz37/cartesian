@@ -22,7 +22,8 @@ func GetPoints(c *gin.Context) {
 
 	coordinates, err := models.FindCoordinates()
 	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"message": err})
+		c.JSON(ResponseMessage(http.StatusBadRequest, err.Error()))
+		return
 	}
 
 	c.JSON(http.StatusOK, gin.H{"message": coordinates})

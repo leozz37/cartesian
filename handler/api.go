@@ -29,7 +29,7 @@ func FindDistances(c *gin.Context) {
 
 	err := validateQuery(x, y, distance)
 	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"message": err.Error()})
+		c.JSON(ResponseMessage(http.StatusBadRequest, err.Error()))
 		return
 	}
 
@@ -42,7 +42,7 @@ func FindDistances(c *gin.Context) {
 	coordinate := models.Coordinate{X: xFloat, Y: yFloat}
 	matches, err := getWithinDistances(coordinate, distanceFloat)
 	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"message": err})
+		c.JSON(ResponseMessage(http.StatusBadRequest, err.Error()))
 	}
 
 	c.JSON(http.StatusOK, gin.H{"message": matches})
