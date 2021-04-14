@@ -21,7 +21,7 @@ func main() {
 		log.Fatal("Error loading .env file")
 	}
 
-	// Init Database and Migrate coordiantes model
+	// Init Database and Migrate coordinates model
 	db.ConnectMySQL(os.Getenv("DATABASE_TYPE"), os.Getenv("DATABASE_DSN"))
 	db.AutoMigration(models.Coordinate{})
 

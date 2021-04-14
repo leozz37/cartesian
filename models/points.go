@@ -31,7 +31,7 @@ func GetCoordinatesFromFile(filePath string) ([]Coordinate, error) {
 	return coordinates, nil
 }
 
-// createCoordiantes saves the coordinates to Database
+// CreateCoordinates saves the coordinates to Database
 func CreateCoordinates(coordinates []Coordinate) {
 	for _, coordinate := range coordinates {
 		err := CreateCoordinate(coordinate)
@@ -41,7 +41,7 @@ func CreateCoordinates(coordinates []Coordinate) {
 	}
 }
 
-// CalculateManhattanDistance between two coordiantes
+// CalculateManhattanDistance between two coordinates
 func CalculateManhattanDistance(point1, point2 Coordinate) float64 {
 	distanceXPoints := math.Abs(point1.X - point2.X)
 	distanceYPoints := math.Abs(point1.Y - point2.Y)

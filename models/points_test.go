@@ -30,7 +30,7 @@ func TestGetCoordinatesFromFileSuccess(t *testing.T) {
 	t.Error("Couldn't find coordinates")
 }
 
-func TestCreateCoordiantesSuccess(t *testing.T) {
+func TestCreateCoordinatesSuccess(t *testing.T) {
 	setupMySQL()
 
 	var coordinates []Coordinate
@@ -44,9 +44,9 @@ func TestCreateCoordiantesSuccess(t *testing.T) {
 	}
 
 	if result[0].X != coordinate.X {
-		t.Error("X coordiante is differente")
+		t.Error("X coordinate is different")
 	} else if result[0].Y != coordinate.Y {
-		t.Error("Y coordiante is differente")
+		t.Error("Y coordinate is different")
 	}
 }
 

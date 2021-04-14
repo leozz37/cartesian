@@ -19,11 +19,11 @@ func DeleteCoordinates() error {
 }
 
 func FindCoordinates() ([]Coordinate, error) {
-	var coordiantes []Coordinate
+	var coordinates []Coordinate
 
-	err := db.MySQL.Find(&coordiantes).Error
+	err := db.MySQL.Find(&coordinates).Error
 	if err != nil {
 		return nil, err
 	}
-	return coordiantes, nil
+	return coordinates, nil
 }
