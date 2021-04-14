@@ -12,6 +12,8 @@ import (
 )
 
 func main() {
+	log.Println("STATING THE APPLICATION")
+	log.Println("Reading the .env file")
 	// Load environment variables from .env file
 	err := godotenv.Load(".env.example")
 	if err != nil {
