@@ -6,9 +6,12 @@ metadata:
   name: cartesian
 spec:
   ports:
-    - name: "3000"
-      port: 3000
-      targetPort: 3000
+    - name: "8080"
+      port: 8080
+      targetPort: 8080
+    - name: "2112"
+      port: 2112
+      targetPort: 2112
   selector:
     io.kompose.service: cartesian
 status:

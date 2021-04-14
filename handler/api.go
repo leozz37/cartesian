@@ -12,16 +12,16 @@ import (
 )
 
 var (
-	reqApiPointsCounter = *metrics.CreateCounter(
+	reqAPIPointsCounter = *metrics.CreateCounter(
 		"api_http_api_points_request_total",
 		"Total http request on /api/points",
 	)
 )
 
-// GET /api/points
+// FindDistances GET /api/points
 func FindDistances(c *gin.Context) {
 	// Prometheus counter
-	metrics.IncCounter(reqApiPointsCounter)
+	metrics.IncCounter(reqAPIPointsCounter)
 
 	distance := c.Query("distance")
 	x := c.Query("x")
@@ -29,7 +29,7 @@ func FindDistances(c *gin.Context) {
 
 	err := validateQuery(x, y, distance)
 	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"message": err.Error()})
+		c.JSON(ResponseMessage(http.StatusBadRequest, err.Error()))
 		return
 	}
 
@@ -42,7 +42,7 @@ func FindDistances(c *gin.Context) {
 	coordinate := models.Coordinate{X: xFloat, Y: yFloat}
 	matches, err := getWithinDistances(coordinate, distanceFloat)
 	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"message": err})
+		c.JSON(ResponseMessage(http.StatusBadRequest, err.Error()))
 	}
 
 	c.JSON(http.StatusOK, gin.H{"message": matches})
@@ -78,13 +78,16 @@ func validateQueryValue(value string) error {
 }
 
 func validateQuery(x, y, distance string) error {
-	if err := validateQueryValue(distance); err != nil {
+	err := validateQueryValue(distance)
+	if err != nil {
 		return err
 	}
-	if err := validateQueryValue(x); err != nil {
+	err = validateQueryValue(x)
+	if err != nil {
 		return err
 	}
-	if err := validateQueryValue(y); err != nil {
+	err = validateQueryValue(y)
+	if err != nil {
 		return err
 	}
 	return nil

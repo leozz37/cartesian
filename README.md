@@ -7,6 +7,7 @@
 [![Docker Compose](https://github.com/leozz37/cartesian/actions/workflows/docker_compose.yml/badge.svg)](https://github.com/leozz37/cartesian/actions/workflows/docker_compose.yml)
 [![Terraform](https://github.com/leozz37/cartesian/actions/workflows/terraform.yml/badge.svg)](https://github.com/leozz37/cartesian/actions/workflows/terraform.yml)
 [![Maintainability](https://api.codeclimate.com/v1/badges/799eec37d71c72d1c5e4/maintainability)](https://codeclimate.com/github/leozz37/cartesian/maintainability)
+[![codecov](https://codecov.io/gh/leozz37/cartesian/branch/master/graph/badge.svg?token=NriF4QUxDZ)](https://codecov.io/gh/leozz37/cartesian)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/a9fdbd2d9cde4aeab07a03e8f23bab12)](https://www.codacy.com/gh/leozz37/cartesian/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=leozz37/cartesian&amp;utm_campaign=Badge_Grade)
 [![Go Report Card](https://goreportcard.com/badge/github.com/leozz37/cartesian)](https://goreportcard.com/report/github.com/leozz37/cartesian)
 
@@ -431,19 +432,19 @@ version. You must use the following name convention: **release-X.Y.Z**, where
 X, Y and Z are: major, minor and patch [version numbers](#versioning).
 
 The ```experimental``` is a **temporary branch** which contains a new feature or
-ideia. You must use the following name convention: **experimental-brief-description**.
+ideia. You must use the following name convention: **experimental/brief-description**.
 
 The ```feature``` is a **temporary branch** which contains a new feature under
 development that latter will be merged against the development branch. You must
-use the following name convention: **feature-brief-description**.
+use the following name convention: **feature/brief-description**.
 
 The ```bugfix``` is a **temporary branch** which contains necessary fix to be
 applied **after** a specific release to be merged against the development branch.
-You must use the following name convention: **bugfix-brief-description**.
+You must use the following name convention: **bugfix/brief-description**.
 
 The ```hotfix``` is a **temporary branch** which contains a critical fix to be
 applied **immediately** and merged against the main and the development branches.
-You must use the following name convention: **hotfix-brief-description**.
+You must use the following name convention: **hotfix/brief-description**.
 
 Feel free to apply the labels from GitHub to the branches, they are very helpful.
 

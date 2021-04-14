@@ -18,16 +18,21 @@ spec:
     spec:
       containers:
         - env:
-            - name: DATABASE_URL
+            - name: DATABASE_DSN
               value: root:root@tcp(mysql:3306)/cartesian
+            - name: DATABASE_TYPE
+              value: mysql
             - name: DATA_PATH
-              value: /Users/leo/Development/cartesian/k8s/data/points.js
+              value: data/points.json
+            - name: GIN_MODE
+              value: release
             - name: PORT
-              value: "3000"
+              value: "8080"
           image: cartesian
           name: cartesian
           ports:
-            - containerPort: 3000
+            - containerPort: 8080
+            - containerPort: 2112
           resources: {}
       restartPolicy: Always
 status: {}

@@ -9,10 +9,12 @@ import (
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 )
 
+// IncCounter incrementes the given counter
 func IncCounter(counter prometheus.Counter) {
 	counter.Inc()
 }
 
+// CreateCounter for a metric monitoring
 func CreateCounter(name, help string) *prometheus.Counter {
 	counter := promauto.NewCounter(prometheus.CounterOpts{
 		Name: name,
@@ -21,6 +23,7 @@ func CreateCounter(name, help string) *prometheus.Counter {
 	return &counter
 }
 
+// InitPrometheus start Prometheus port
 func InitPrometheus() {
 	log.Println("Starting Prometheus")
 	http.Handle("/metrics", promhttp.Handler())
