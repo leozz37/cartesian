@@ -20,6 +20,7 @@ This is an API for Civi test.
   - [Makefile](#makefile)
   - [Docker](#docker)
   - [Docker-compose](#docker-compose)
+  - [Kubernetes](#kubernetes)
 - [Testing](#testing)
   - [Unit Tests](#unit-tests)
 
@@ -165,6 +166,44 @@ To run the docker-compose, set the `$PORT` variable and run:
 $ export PORT=8080
 
 $ docker-compose up
+```
+
+### Kubernetes
+
+To create the Kubernetes pods, make sure you have [MinuKube](https://minikube.sigs.k8s.io/docs/start/) or [Kind](https://kind.sigs.k8s.io/) installed. In this example, we'll be using `kind`.
+
+Then run the following command:
+
+Create a cluster:
+
+```shell
+$ kind create cluster --name=cartesian
+```
+
+Select the cluster you just created:
+
+```shell
+$ kubectl cluster-info --context kind-cartesian
+```
+
+Create the application pods:
+
+```shell
+$ kubectl apply -f k8s/
+```
+
+Verify pods status:
+
+```shell
+$ kubectl get pods
+```
+
+Wait until all the pods STATUS are `running`.
+
+You can expose the API service port, running:
+
+```shell
+$ kubectl port-forward service/cartesian 8080:8080
 ```
 
 ## Testing
